@@ -18,12 +18,18 @@ class GetNameViewController: UIViewController {
     
     @IBOutlet weak var txtLast: UITextField!
     
+    var firstName : String?
+    var lastName : String?
+    
     var sendNameDelegate : SendNameDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let firstName = firstName else{return}
+        guard let lastName = lastName else {return}
+        txtFirst.text = firstName
+        txtLast.text = lastName
         // Do any additional setup after loading the view.
     }
     

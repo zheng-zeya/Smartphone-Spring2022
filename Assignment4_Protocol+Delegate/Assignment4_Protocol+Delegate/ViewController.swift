@@ -30,6 +30,12 @@ class ViewController: UIViewController, SendNameDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueSendName" {
             let secondVC = segue.destination as! GetNameViewController
+            
+            guard let first = lblFirst.text else{return}
+            guard let last = lblLast.text else{return}
+            secondVC.firstName = first
+            secondVC.lastName = last
+            
             secondVC.sendNameDelegate = self
         }
     }
